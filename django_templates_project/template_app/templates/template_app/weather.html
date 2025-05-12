@@ -12,10 +12,17 @@
     <br>
     <h2>Temperature of Tel Aviv :{{Tel_Aviv}} 'C</h2>
     <br>
-    <h2>Temperature of Paris :{{Paris.1}} 'C </h2>
+    <ul>
+        {%for key,value in London.items%}
+        <li>London : {{key}} -> {{value}}</li>
+        {%endfor%}
+    </ul>
     <br>
-    <h2>Temperature of London in the morning:{{London.Morning}} 'C ,
-         Noon:{{London.Noon}} 'C </h2>
-for
+    <ol>
+    {% for item in Paris %}
+        <li><p>Paris:{{item}}</p></li>
+    {% endfor %}
+    </ol>
+    
 </body>
 </html>
