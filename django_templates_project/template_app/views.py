@@ -14,5 +14,6 @@ def weather(request):
         "Paris" : [5,14,20,22] ,
         "London" : {"Morning" : "7" ,"Noon" : "10" , "Afternoon": "12","Night" : "10"},
         "user_premium" : True ,
+        "Test" : "Test Test Test Test"
         }
     return render(request,"template_app/weather.html",context=weather_dictionary)
