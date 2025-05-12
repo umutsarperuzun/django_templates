@@ -11,7 +11,8 @@ def weather(request):
         "Istanbul" : "30" , 
         "Amsterdam" : "20" ,
         "Tel_Aviv" : "35" ,
-        "Paris" : [10,14,20,22] ,
-        "London" : {"Morning" : "7" ,"Noon" : "10" , "Afternoon": "12","Night" : "10"}
+        "Paris" : [5,14,20,22] ,
+        "London" : {"Morning" : "7" ,"Noon" : "10" , "Afternoon": "12","Night" : "10"},
+        "user_premium" : True ,
         }
     return render(request,"template_app/weather.html",context=weather_dictionary)

@@ -1,28 +1,32 @@
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Weather</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Weather Report</h1>
     <!--Jinja syntax-->
-    
+
     <h2>Temperature of Istanbul :{{Istanbul}} 'C</h2>
-    <br>
+    <br />
     <h2>Temperature of Tel Aviv :{{Tel_Aviv}} 'C</h2>
-    <br>
+    <br />
     <ul>
-        {%for key,value in London.items%}
-        <li>London : {{key}} -> {{value}}</li>
-        {%endfor%}
+      {%for key,value in London.items%}
+      <li>London : {{key}} -> {{value}}</li>
+      {%endfor%}
     </ul>
-    <br>
+    <br />
+
+    {% if user_premium %}
     <ol>
-    {% for item in Paris %}
-        <li><p>Paris:{{item}}</p></li>
-    {% endfor %}
+      {% for item in Paris %} {%if item < 6 %}
+      <li><p>Paris:Too Cold!!</p></li>
+      {%else%}
+      <li><p>Paris:{{item}}</p></li>
+      {%endif%} {% endfor %}
     </ol>
-    
-</body>
+    {% endif %}
+  </body>
 </html>
