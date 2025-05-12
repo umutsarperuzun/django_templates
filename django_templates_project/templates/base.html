@@ -86,12 +86,17 @@
       .bd-mode-toggle .dropdown-menu .active .bi {
         display: block !important;
       }
+      /* Show it is fixed to the top */
+      body {
+        min-height: 75rem;
+        padding-top: 4.5rem;
+      }
     </style>
   </head>
   <body>
     <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">Fixed navbar</a>
+        <a class="navbar-brand" href="#">Weather App</a>
         <button
           class="navbar-toggler"
           type="button"
@@ -106,9 +111,9 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav me-auto mb-2 mb-md-0">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <a class="nav-link active" aria-current="page" href="{%url 'template_app:index' %}">Home</a>
             </li>
-            <li class="nav-item"><a class="nav-link" href="#">Link</a></li>
+            <li class="nav-item"><a class="nav-link" href="{%url 'template_app:weather' %}">Weather Report</a></li>
             <li class="nav-item">
               <a class="nav-link disabled" aria-disabled="true">Disabled</a>
             </li>
@@ -127,24 +132,8 @@
         </div>
       </div>
     </nav>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    
+    {% block content %} {% endblock %}
 
-        {% block content %} 
-        
-        {% endblock %}     
-        
-        <h1>END OF BASE HTML</h1>
+    <h1>END OF BASE HTML</h1>
   </body>
 </html>
